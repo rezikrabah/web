@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Interactive Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #colorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #greetingForm input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #greetingForm button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Fun Interactive Page!</h1>
+    <button id="colorButton">Change Background Color</button>
+    <form id="greetingForm">
+        <input type="text" id="nameInput" placeholder="Enter your name" required>
+        <button type="submit">Greet Me</button>
+    </form>
+
+    <script>
+        // Function to change background color
+        document.getElementById('colorButton').addEventListener('click', function() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#33FFF5'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        });
+
+        // Function to display greeting alert
+        document.getElementById('greetingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            alert('Hello, ' + name + '! Welcome to our fun page.');
+        });
+    </script>
+</body>
+</html>
